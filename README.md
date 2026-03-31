@@ -40,3 +40,20 @@ conda activate vrmotion
 # Install PyTorch and dependencies
 pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
 # pip install -r requirements.txt
+
+📊 Dataset PreparationDownload the VRMotion dataset from [Link to Dataset - TBA].Extract the contents and organize them into the data/ directory using the 16-frame historical to 16-frame future sliding window format as follows:PlaintextVRMotion-Baselines/
+├── data/
+│   ├── train/
+│   ├── val/
+│   └── test/
+🚀 UsageTrainingTo train a model from scratch, run the training script and specify the visual encoder and temporal head. For example, to train the best-performing Qwen2.5-VL + LSTM model:Bashpython scripts/train.py --encoder qwen2.5-vl --head lstm --batch_size 16
+To train the ResNet + ST-GCN baseline (utilizing a $5 \times 10^{-5}$ learning rate and Cosine Annealing):Bashpython scripts/train.py --encoder resnet --head st-gcn --lr 5e-5
+EvaluationTo evaluate a trained model and compute the core metrics (MPJPE, PA-MPJPE, and Velocity Error):Bashpython scripts/evaluate.py --checkpoint path/to/your/checkpoint.pth
+VisualizationTo render predicted 3D skeletal trajectories or generate inter-joint velocity correlation matrices:Bashpython plots/visualize_skeleton.py --prediction path/to/output.npy
+📝 CitationIf you find our dataset or baselines useful in your research, please consider citing our paper:代码段@inproceedings{zhang2026vrmotion,
+  title={VRMotion: A Large-Scale Dataset for Full-Body Motion Prediction in Ego-Vision VR Tasks},
+  author={Zhang, Dayou and Cao, Zijian and Song, Yi and Zhang, Rongrong and Lin, Shufang and Wang, Fangxin},
+  booktitle={Proceedings of the 34th ACM International Conference on Multimedia},
+  year={2026},
+  address={Rio de Janeiro, Brazil}
+}
