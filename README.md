@@ -49,7 +49,7 @@ VRMotion-Baselines/
 │   ├── val/
 │   └── test/
 
-Usage
+## 🛠️ Installation
 Training
 To train a model from scratch, run the training script and specify the visual encoder and temporal head. For example, to train the best-performing Qwen2.5-VL + LSTM model:
 python scripts/train.py --encoder qwen2.5-vl --head lstm --batch_size 16
