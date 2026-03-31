@@ -46,11 +46,29 @@ pip install torch torchvision torchaudio --index-url [https://download.pytorch.o
 │   ├── train/
 │   ├── val/
 │   └── test/
-🚀 UsageTrainingTo train a model from scratch, run the training script and specify the visual encoder and temporal head. For example, to train the best-performing Qwen2.5-VL + LSTM model:Bashpython scripts/train.py --encoder qwen2.5-vl --head lstm --batch_size 16
-To train the ResNet + ST-GCN baseline (utilizing a $5 \times 10^{-5}$ learning rate and Cosine Annealing):Bashpython scripts/train.py --encoder resnet --head st-gcn --lr 5e-5
-EvaluationTo evaluate a trained model and compute the core metrics (MPJPE, PA-MPJPE, and Velocity Error):Bashpython scripts/evaluate.py --checkpoint path/to/your/checkpoint.pth
-VisualizationTo render predicted 3D skeletal trajectories or generate inter-joint velocity correlation matrices:Bashpython plots/visualize_skeleton.py --prediction path/to/output.npy
-📝 CitationIf you find our dataset or baselines useful in your research, please consider citing our paper:代码段@inproceedings{zhang2026vrmotion,
+
+🚀 Usage
+Training
+To train a model from scratch, run the training script and specify the visual encoder and temporal head. For example, to train the best-performing Qwen2.5-VL + LSTM model:
+```bash
+python scripts/train.py --encoder qwen2.5-vl --head lstm --batch_size 16
+To train the ResNet + ST-GCN baseline (utilizing a $5 \times 10^{-5}$ learning rate and Cosine Annealing):
+```bash
+python scripts/train.py --encoder resnet --head st-gcn --lr 5e-5
+
+Evaluation
+To evaluate a trained model and compute the core metrics (MPJPE, PA-MPJPE, and Velocity Error):
+```bash
+python scripts/evaluate.py --checkpoint path/to/your/checkpoint.pth
+
+Visualization
+To render predicted 3D skeletal trajectories or generate inter-joint velocity correlation matrices:
+```bash
+python plots/visualize_skeleton.py --prediction path/to/output.npy
+
+📝 Citation
+If you find our dataset or baselines useful in your research, please consider citing our paper:
+@inproceedings{zhang2026vrmotion,
   title={VRMotion: A Large-Scale Dataset for Full-Body Motion Prediction in Ego-Vision VR Tasks},
   author={Zhang, Dayou and Cao, Zijian and Song, Yi and Zhang, Rongrong and Lin, Shufang and Wang, Fangxin},
   booktitle={Proceedings of the 34th ACM International Conference on Multimedia},
