@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Official PyTorch implementation of the baseline models for the paper: **"VRMotion: A Large-Scale Dataset for Full-Body Motion Prediction in Ego-Vision VR Tasks"**, accepted at ACM Multimedia 2026 (Rio de Janeiro, Brazil).
+Official PyTorch implementation of the baseline models for the paper: **"VRMotion: A Large-Scale Dataset for Full-Body Motion Prediction in Ego-Vision VR Tasks"**.
 
 ## 📖 Overview
 
@@ -66,7 +66,7 @@ Citation
 If you find our dataset or baselines useful in your research, please consider citing our paper:
 @inproceedings{zhang2026vrmotion,
   title={VRMotion: A Large-Scale Dataset for Full-Body Motion Prediction in Ego-Vision VR Tasks},
-  author={Zhang, Dayou and Cao, Zijian and Song, Yi and Zhang, Rongrong and Lin, Shufang and Wang, Fangxin},
+  author={Zhang, Dayou and Song, Yi and Lin, Shufang and Cao, Zijian and Zhang, Rongrong and Wang, Fangxin},
   booktitle={Proceedings of the 34th ACM International Conference on Multimedia},
   year={2026},
   address={Rio de Janeiro, Brazil}
