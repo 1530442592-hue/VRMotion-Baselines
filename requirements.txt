@@ -1,0 +1,37 @@
+# ==========================================
+# Core Deep Learning Framework
+# ==========================================
+torch>=2.0.0
+torchvision
+torchaudio
+
+# ==========================================
+# Visual Encoders Support 
+# (For Qwen2.5-VL, OneVision, DINOv2, VideoMAE)
+# ==========================================
+transformers>=4.37.0
+accelerate
+bitsandbytes      # 用于 OneVision 等大模型的 8-bit 量化支持
+timm              # 用于部分视觉 Transformer 的骨干网络加载
+
+# ==========================================
+# Data Processing & Evaluation Metrics
+# (For MPJPE, PA-MPJPE, and Vel Error)
+# ==========================================
+numpy
+scipy             # PA-MPJPE 指标计算（普氏分析 Procrustes Analysis）必备
+pandas
+scikit-learn
+tqdm
+
+# ==========================================
+# 3D Skeletal Visualization
+# ==========================================
+matplotlib
+open3d            # 用于 3D 关节坐标和轨迹的高性能渲染
+
+# ==========================================
+# Dataset Management & Cloud Deployment
+# ==========================================
+huggingface_hub   # 连接 Hugging Face 仓库
+hf_transfer       # 用于千万级大文件的 Rust 底层极速断点续传
