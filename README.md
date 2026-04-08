@@ -67,7 +67,7 @@ If you find our dataset or baselines useful in your research, please consider ci
 @inproceedings{zhang2026vrmotion,
   title={VRMotion: A Large-Scale Dataset for Full-Body Motion Prediction in Ego-Vision VR Tasks},
   author={Zhang, Dayou and Song, Yi and Lin, Shufang and Cao, Zijian and Zhang, Rongrong and Wang, Fangxin},
-  booktitle={Proceedings of the 34th ACM International Conference on Multimedia},
+  booktitle={Submitted to ACM Multimedia},
   year={2026},
   address={Rio de Janeiro, Brazil}
 }
