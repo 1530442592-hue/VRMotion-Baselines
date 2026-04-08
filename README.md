@@ -31,13 +31,13 @@ git clone [https://github.com/1530442592-hue/VRMotion-Baselines.git](https://git
 cd VRMotion-Baselines
 ```
 
-# Create a conda environment
+## Create a conda environment
 ```bash
 conda create -n vrmotion python=3.10
 conda activate vrmotion
 ```
 
-# Install PyTorch and dependencies
+## Install PyTorch and dependencies
 ```bash
 pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
 pip install -r requirements.txt
