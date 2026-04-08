@@ -29,14 +29,19 @@ The baselines are constructed by pairing state-of-the-art Visual Encoders with d
 # Clone the repository
 git clone [https://github.com/1530442592-hue/VRMotion-Baselines.git](https://github.com/1530442592-hue/VRMotion-Baselines.git)
 cd VRMotion-Baselines
+```
 
 # Create a conda environment
+```bash
 conda create -n vrmotion python=3.10
 conda activate vrmotion
+```
 
 # Install PyTorch and dependencies
+```bash
 pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
 pip install -r requirements.txt
+```
 
 📊 Dataset Preparation
 Download the VRMotion dataset from https://huggingface.co/datasets/strfysy/VRMotion.
@@ -51,14 +56,19 @@ VRMotion-Baselines/
 🚀 Usage
 Training
 To train a model from scratch, run the specific training script for your desired combination. For example, to train the best-performing Qwen2.5-VL + ST-GCN model:
+```bash
 python scripts/train_qwen25_vl_stgcn.py
+```
 To train the ResNet + ST-GCN baseline:
+```bash
 python scripts/train_res_stgcn.py
+```
 
 Evaluation & Visualization
 We provide dedicated scripts for evaluation and visualization. To render predicted trajectories for the Qwen2.5-VL model:
+```bash
 python scripts/visualize_qwen25_vl_lstm.py
-
+```
 📝 Citation
 If you find our dataset or baselines useful in your research, please consider citing our paper:
 @inproceedings{zhang2026vrmotion,
