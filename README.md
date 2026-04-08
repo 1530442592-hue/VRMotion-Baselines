@@ -71,7 +71,7 @@ python scripts/visualize_qwen25_vl_lstm.py
 ```
 📝 Citation
 If you find our dataset or baselines useful in your research, please consider citing our paper:
-
+```bibtex
 @inproceedings{zhang2026vrmotion,
   title={VRMotion: A Large-Scale Dataset for Full-Body Motion Prediction in Ego-Vision VR Tasks},
   author={Zhang, Dayou and Song, Yi and Lin, Shufang and Cao, Zijian and Zhang, Rongrong and Wang, Fangxin},
@@ -79,3 +79,4 @@ If you find our dataset or baselines useful in your research, please consider ci
   year={2026},
   address={Rio de Janeiro, Brazil}
 }
+```
