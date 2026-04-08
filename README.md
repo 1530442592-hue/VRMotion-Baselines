@@ -46,7 +46,7 @@ pip install -r requirements.txt
 📊 Dataset Preparation
 Download the VRMotion dataset from https://huggingface.co/datasets/strfysy/VRMotion.
 Organize the extracted contents into a data/ directory (ignored in git) using the native structure:
-VRMotion-Baselines/
+> VRMotion-Baselines/
 ├── data/
 │   ├── beat_saber/
 │   │   ├── motion_3d/      # Reconstructed 3D skeletal joint positions in JSON format
