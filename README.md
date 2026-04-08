@@ -18,11 +18,10 @@ The baselines are constructed by pairing state-of-the-art Visual Encoders with d
 
 ## 📂 Repository Structure
 
-* `data/` *(ignored in git)* - Directory for placing the downloaded VRMotion dataset.
-* `common/` - Shared utilities, metrics computation (MPJPE, PA-MPJPE, Vel Error), and logging.
-* `models/` - PyTorch implementations of the visual-temporal architectures.
-* `scripts/` - Standardized training and evaluation pipelines.
-* `plots/` - Visualization tools for rendering 3D skeletal motions and inter-joint trajectories.
+* `common/` - Shared utilities, metrics computation (MPJPE, PA-MPJPE, Vel Error), and dataset loading.
+* `models/` - PyTorch implementations of the 10 visual-temporal architectures (e.g., `qwen25_vl_stgcn.py`).
+* `plots/saber_visuals_pro/` - Visualization tools for rendering predicted 3D skeletal motions.
+* `scripts/` - Individual, standardized training pipelines for each specific model combination (e.g., `train_qwen25_vl_stgcn.py`).
 
 ## 🛠️ Installation
 
@@ -36,33 +35,31 @@ conda create -n vrmotion python=3.10
 conda activate vrmotion
 
 # Install PyTorch and dependencies
-
-Dataset Preparation
-Download the VRMotion dataset from [Link to Dataset - TBA].
-
-Extract the contents and organize them into the data/ directory using the 16-frame historical to 16-frame future sliding window format as follows:
 pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
-# pip install -r requirements.txt
+pip install -r requirements.txt
+
+📊 Dataset Preparation
+Download the VRMotion dataset from https://huggingface.co/datasets/strfysy/VRMotion.
+Organize the extracted contents into a data/ directory (ignored in git) using the native structure:
 VRMotion-Baselines/
 ├── data/
-│   ├── train/
-│   ├── val/
-│   └── test/
+│   ├── beat_saber/
+│   │   ├── motion_3d/      # Reconstructed 3D skeletal joint positions in JSON format
+│   │   ├── raw_data/       # Raw motion capture data in FBX and CSV format
+│   │   └── video_frames/   # Synchronized RGB video recordings
 
-## 🛠️ Installation
+🚀 Usage
 Training
-To train a model from scratch, run the training script and specify the visual encoder and temporal head. For example, to train the best-performing Qwen2.5-VL + LSTM model:
-python scripts/train.py --encoder qwen2.5-vl --head lstm --batch_size 16
-To train the ResNet + ST-GCN baseline (utilizing a 5e-5 learning rate and Cosine Annealing):
-python scripts/train.py --encoder resnet --head st-gcn --lr 5e-5
-Evaluation
-To evaluate a trained model and compute the core metrics (MPJPE, PA-MPJPE, and Velocity Error):
-python scripts/evaluate.py --checkpoint path/to/your/checkpoint.pth
-Visualization
-To render predicted 3D skeletal trajectories or generate inter-joint velocity correlation matrices:
-python plots/visualize_skeleton.py --prediction path/to/output.npy
+To train a model from scratch, run the specific training script for your desired combination. For example, to train the best-performing Qwen2.5-VL + ST-GCN model:
+python scripts/train_qwen25_vl_stgcn.py
+To train the ResNet + ST-GCN baseline:
+python scripts/train_res_stgcn.py
 
-Citation
+Evaluation & Visualization
+We provide dedicated scripts for evaluation and visualization. To render predicted trajectories for the Qwen2.5-VL model:
+python scripts/visualize_qwen25_vl_lstm.py
+
+📝 Citation
 If you find our dataset or baselines useful in your research, please consider citing our paper:
 @inproceedings{zhang2026vrmotion,
   title={VRMotion: A Large-Scale Dataset for Full-Body Motion Prediction in Ego-Vision VR Tasks},
