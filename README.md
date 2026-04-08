@@ -46,13 +46,14 @@ pip install -r requirements.txt
 📊 Dataset Preparation
 Download the VRMotion dataset from https://huggingface.co/datasets/strfysy/VRMotion.
 Organize the extracted contents into a data/ directory (ignored in git) using the native structure:
+```
 VRMotion-Baselines/
 ├── data/
 │   ├── beat_saber/
 │   │   ├── motion_3d/      # Reconstructed 3D skeletal joint positions in JSON format
 │   │   ├── raw_data/       # Raw motion capture data in FBX and CSV format
 │   │   └── video_frames/   # Synchronized RGB video recordings
-
+```
 🚀 Usage
 Training
 To train a model from scratch, run the specific training script for your desired combination. For example, to train the best-performing Qwen2.5-VL + ST-GCN model:
