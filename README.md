@@ -46,6 +46,7 @@ pip install -r requirements.txt
 📊 Dataset Preparation
 Download the VRMotion dataset from https://huggingface.co/datasets/strfysy/VRMotion.
 Organize the extracted contents into a data/ directory (ignored in git) using the native structure:
+**Plaintext:**
 > VRMotion-Baselines/
 ├── data/
 │   ├── beat_saber/
